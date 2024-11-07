@@ -21,3 +21,15 @@ d = ord(a[4])
 print(f"Simvol code {a[0]} is {b}.")
 print(f"Simvol code {a[0]} is {c}.")
 print(f"Simvol code {a[0]} is {d}.")
+
+a = input()
+print(a[1::2])
+
+s = input()
+word = input()
+print(s.upper == word.upper())
+
+
+
+
+
