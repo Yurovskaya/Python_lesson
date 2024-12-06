@@ -22,3 +22,13 @@ a = input()
 print(a.title().swapcase())
 
 
+# Написать программу, которая сможет проверить входные данные на палиндром (строка или число одинаково читается в прямом и обратном направлении)
+word = input()
+a = word[::-1]
+if word == a:
+    print(True)
+else:
+    print(False)
+
+text = input().lower()
+print(text == text[::-1])
