@@ -31,14 +31,14 @@
 # Напишите функцию count_words, которая принимает на вход строку, представляющую предложение, и возвращает количество слов в этом предложении.
 # Предполагается, что слова разделены пробелами. Напишите также тесты, чтобы проверить правильность работы функции на разных входных данных.
 
-user_words = input()
-
-def count_words(user_words):
-    word = user_words.split()
-    assert len(word) != 0, f'Ошибка'
-    return len(word)
-
-print(count_words(user_words))
+# user_words = input()
+#
+# def count_words(user_words):
+#     word = user_words.split()
+#     assert len(word) != 0, f'Ошибка'
+#     return len(word)
+#
+# print(count_words(user_words))
 
 
 # Написать программу, которая сможет проверить входные данные на палиндром (строка или число одинаково читается в прямом и обратном направлении)
@@ -122,31 +122,31 @@ print(count_words(user_words))
 
 # Напишите функцию calculate_sum, которая принимает на вход одно целочисленное значение N и возвращает сумму всех чисел от 1 до N включительно.
 
-n = int(input('Введите N: '))
-
-def summa_n(n):
-    return (n * (n + 1)) // 2
-
-assert summa_n(5) == 15, 'Ошибка'
-assert summa_n(1) == 1, 'Ошибка'
-assert summa_n(0) == 0, 'Ошибка'
-assert not summa_n(-11) == 0, 'Ошибка'
-
-
-
-def  is_palindrome(num):
-    str_num = str(num)
-    return str_num == str_num[::-1]
-
-# я ввожу на вход целое число
-n = input()
-#  вывожу тип
-a = (type(n))
-print(a)
-
-# если а не равно строке строке - ошибки не будет
-# если а равно строке, то буде ошибка
-assert not a == str, 'Ошибка'
+# n = int(input('Введите N: '))
+#
+# def summa_n(n):
+#     return (n * (n + 1)) // 2
+#
+# assert summa_n(5) == 15, 'Ошибка'
+# assert summa_n(1) == 1, 'Ошибка'
+# assert summa_n(0) == 0, 'Ошибка'
+# assert not summa_n(-11) == 0, 'Ошибка'
+#
+#
+#
+# def  is_palindrome(num):
+#     str_num = str(num)
+#     return str_num == str_num[::-1]
+#
+# # я ввожу на вход целое число
+# n = input()
+# #  вывожу тип
+# a = (type(n))
+# print(a)
+#
+# # если а не равно строке строке - ошибки не будет
+# # если а равно строке, то буде ошибка
+# assert not a == str, 'Ошибка'
 #
 # def calculate_sum(N):
 #     return sum(range(1, N + 1))
@@ -160,9 +160,45 @@ assert not a == str, 'Ошибка'
 # assert not type(n) == int
 
 
+#1. В функции is_palindrome убедитесь, что строка перевернута и не чувствительна к пробелам и регистру.
+# def is_palindrome():
+#     a = input().lower().replace(' ', '')
+#     return a == a[::-1]
+#
+# result = is_palindrome()
+# assert not result == True, 'Строка является палиндромом'
+# print(f'Строка не является палиндромом: {result}')
 
+# 2. В функции is_multiple_of_three используйте assert not для проверки, что переданное число не кратно 3.
 
+# def is_multiple_of_three(a):
+#     return a % 3 == 0
+#
+# result = is_multiple_of_three(33)
+# assert not result == True, 'Число кратно 3'
+# print(f'Строка не кратна трем: {result}')
+# print(result)
 
+# 3. Напишите функцию are_anagrams, которая проверяет, являются ли две строки анаграммами (содержат одинаковые символы, но в разном порядке).
+# Используйте assert с not для проверки, что строки не являются анаграммами.
+
+def are_anagrams():
+    a = input().lower()
+    a_list = list(a)
+    a_list.sort()
+    b = input().lower()
+    b_list = list(b)
+    b_list.sort()
+    return a_list == b_list
+
+result = are_anagrams()
+assert not result, 'Анаграмма'
+print(f'Строка не является анаграммой: {result}')
+
+# Задача 5. Поиск уникальных элементов
+# Напишите функцию find_unique, которая принимает на вход список элементов и возвращает список из элементов, которые встречаются в исходном списке только один раз.
+#
+# Напишите также тесты с использованием pytest, чтобы проверить правильность работы функции на разных входных данных.
 
 
 
