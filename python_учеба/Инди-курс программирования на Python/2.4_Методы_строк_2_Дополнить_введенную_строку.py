@@ -6,7 +6,7 @@
 # Выведите строку в том виде, в котором она вводилась.
 
 input_string = input()
-output_string = input_string.ljust()just(15, '-')
+output_string = input_string.ljust(15, '-')
 print(output_string)
 
 
