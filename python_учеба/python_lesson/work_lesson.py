@@ -8,6 +8,7 @@
 #
 # text = input().lower()
 # print(text == text[::-1])
+from more_itertools.recipes import sum_of_squares
 
 # print((lambda x: str(x) == str(x)[::-1])('tttt'))
 
@@ -31,14 +32,14 @@
 # Напишите функцию count_words, которая принимает на вход строку, представляющую предложение, и возвращает количество слов в этом предложении.
 # Предполагается, что слова разделены пробелами. Напишите также тесты, чтобы проверить правильность работы функции на разных входных данных.
 
-user_words = input()
-
-def count_words(user_words):
-    word = user_words.split()
-    assert len(word) != 0, f'Ошибка'
-    return len(word)
-
-print(count_words(user_words))
+# user_words = input()
+#
+# def count_words(user_words):
+#     word = user_words.split()
+#     assert len(word) != 0, f'Ошибка'
+#     return len(word)
+#
+# print(count_words(user_words))
 
 
 # Написать программу, которая сможет проверить входные данные на палиндром (строка или число одинаково читается в прямом и обратном направлении)
@@ -122,45 +123,58 @@ print(count_words(user_words))
 
 # Напишите функцию calculate_sum, которая принимает на вход одно целочисленное значение N и возвращает сумму всех чисел от 1 до N включительно.
 
-n = int(input('Введите N: '))
-
-def summa_n(n):
-    return (n * (n + 1)) // 2
-
-assert summa_n(5) == 15, 'Ошибка'
-assert summa_n(1) == 1, 'Ошибка'
-assert summa_n(0) == 0, 'Ошибка'
-assert not summa_n(-11) == 0, 'Ошибка'
-
-
-
-def  is_palindrome(num):
-    str_num = str(num)
-    return str_num == str_num[::-1]
-
-# я ввожу на вход целое число
-n = input()
-#  вывожу тип
-a = (type(n))
-print(a)
-
-# если а не равно строке строке - ошибки не будет
-# если а равно строке, то буде ошибка
-assert not a == str, 'Ошибка'
+# n = int(input('Введите N: '))
+#
+# def summa_n(n):
+#     return (n * (n + 1)) // 2
+#
+# assert summa_n(5) == 15, 'Ошибка'
+# assert summa_n(1) == 1, 'Ошибка'
+# assert summa_n(0) == 0, 'Ошибка'
+# assert not summa_n(-11) == 0, 'Ошибка'
+#
+#
+#
+# def  is_palindrome(num):
+#     str_num = str(num)
+#     return str_num == str_num[::-1]
+#
+# # я ввожу на вход целое число
+# n = input()
+# #  вывожу тип
+# a = (type(n))
+# print(a)
+#
+# # если а не равно строке строке - ошибки не будет
+# # если а равно строке, то буде ошибка
+# assert not a == str, 'Ошибка'
 #
 # def calculate_sum(N):
 #     return sum(range(1, N + 1))
-#
-#
-#
-#
-#
-#
-# n='txt'
-# assert not type(n) == int
 
 
+# 1. Написать сортировку по убыванию, для списка [5, 2, 9, 1, 5, 6]
+a = [5, 2, 9, 1, 5, 6]
+print(sorted(a, reverse=True))
+#
+# 2. Напишите функцию combine_lists, которая принимает на вход два списка и возвращает новый список, содержащий все элементы из обоих входных списков, сохраняя порядок их следования.
 
+def combine_lists(lst_1, lst_2):
+    lst_3 = lst_1 + lst_2
+    return lst_3
+
+# assert combine_lists([1, 2, 4], [7, 8, 9]) == [1, 2, 4, 7, 8, 9], 'Ошибка: списки не объединены правильно'
+assert combine_lists([], []) == [], 'Ошибка'
+# Напишите также тесты, чтобы проверить правильность работы функции на разных входных данных.
+#
+# 3. Напишите функцию, которая принимает список чисел и возвращает его, отсортированный по сумме цифр каждого числа.
+
+def sum_of_digits(number):
+    return sum(int(digit) for digit in str(number))
+
+numbers = [123, 45, 6, 789]
+sorted_numbers = sorted(numbers, key=sum_of_digits)
+print(sorted_numbers)
 
 
 
